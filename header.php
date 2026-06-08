@@ -1,5 +1,5 @@
-<?php wp_enqueue_style ('main', get_template_directory_uri() . '/assets/css/main.css'); ?>
-<?php wp_enqueue_style ('header', get_template_directory_uri() . '/assets/css/header.css'); ?>
+<?php wp_enqueue_style ('main', get_template_directory_uri() . '/assets/css/build/main.css'); ?>
+<?php wp_enqueue_style ('header', get_template_directory_uri() . '/assets/css/build/header.css'); ?>
 
 <!DOCTYPE html>
 <html lang="en">

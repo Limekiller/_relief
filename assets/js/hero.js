@@ -16,6 +16,7 @@
 const setImage = (
     baseImage,
     maskImage,
+    progressBar,
     image
 ) => {
     if (maskImage.style.opacity == 0) {
@@ -23,6 +24,7 @@ const setImage = (
         maskImage.alt = image.alt;
         maskImage.addEventListener('load', function showImg(e) {
             maskImage.style.opacity = 1;
+            progressBar.classList.add('animation');
             maskImage.removeEventListener('load', showImg);
         });
     } else {
@@ -30,6 +32,7 @@ const setImage = (
         baseImage.alt = image.alt;
         baseImage.addEventListener('load', function showImg(e) {
             maskImage.style.opacity = 0;
+            progressBar.classList.add('animation');
             baseImage.removeEventListener('load', showImg);
         });
     }
@@ -39,34 +42,33 @@ window.onload = () => {
     const images = document.querySelectorAll(".hero .selector img");
     const baseImage = document.querySelector(".hero img.base");
     const maskImage = document.querySelector(".hero img.mask");
+    const progressBar = document.querySelector('.progress');
     const maxIndex = images.length - 1;
 
     let currIndex = 0;
-    let galleryHovered = false;
 
     const gallery = document.querySelector(".hero .gallery");
     gallery.addEventListener("mouseenter", e => {
-        galleryHovered = true;
+        progressBar.style.animationPlayState = 'paused';
     });
     gallery.addEventListener("mouseleave", e => {
-        galleryHovered = false;
+        progressBar.style.animationPlayState = 'running';
     });
 
     document.querySelectorAll('.selector-img').forEach(elem => {
         elem.addEventListener("click", e => {
-            setImage(baseImage, maskImage, e.target.src);
+            setImage(baseImage, maskImage, progressBar, e.target.src);
         });
     });
 
-    setInterval(() => {
-        if (galleryHovered) return;
-
+    progressBar.addEventListener('animationend', () => {
         if (currIndex === maxIndex) {
             currIndex = 0;
         } else {
             currIndex += 1;
         }
 
-        setImage(baseImage, maskImage, images[currIndex]);
-    }, 5000);
+        progressBar.classList.remove('animation');
+        setImage(baseImage, maskImage, progressBar, images[currIndex]);
+    });
 }

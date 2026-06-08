@@ -2,7 +2,7 @@
 /**
 * Template Name: Home Page
 */
-wp_enqueue_style('hero', get_template_directory_uri() . '/assets/css/hero.css');
+wp_enqueue_style('hero', get_template_directory_uri() . '/assets/css/build/hero.css');
 ?>
 
 <?php 
@@ -16,6 +16,7 @@ $images = get_field('hero_images');
             <div class="main">
                 <img class="base" src="<?php echo esc_url($images[0]['url']); ?>" alt="<?php echo esc_attr($images[0]['alt']); ?>" />
                 <img class='mask' src="<?php echo esc_url($images[0]['url']); ?>" alt="<?php echo esc_attr($images[0]['alt']); ?>" />
+                <div class="progress animation"></div>
             </div>
             <div class="selector">
                     <?php foreach($images as $index => $image): ?>

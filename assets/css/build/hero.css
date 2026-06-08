@@ -1,0 +1,133 @@
+.hero {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  gap: 1rem;
+  padding-top: 5rem;
+}
+.hero .gallery {
+  width: 50%;
+}
+.hero .gallery .main {
+  height: 100%;
+  position: relative;
+}
+.hero .gallery .main img {
+  margin: 0;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.75s ease;
+}
+.hero .gallery .main img.mask {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+.hero .gallery .main .progress {
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+.hero .gallery .main .progress.animation {
+  animation: progress 5s linear;
+}
+.hero .gallery .selector {
+  /* display: flex; */
+  display: none;
+  width: 100%;
+  overflow: scroll;
+  margin-top: -4rem;
+  position: relative;
+}
+.hero .gallery .selector button {
+  border: none;
+  padding: 0;
+}
+.hero .gallery .selector button:hover img, .hero .gallery .selector button:focus img {
+  cursor: pointer;
+  z-index: 1;
+  border: 2px solid var(--secondary-color);
+}
+.hero .gallery .selector button img {
+  max-width: 6rem;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+.hero .text {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  gap: 3rem;
+}
+.hero .text h1 {
+  margin-top: 1rem;
+}
+.hero .text h2 {
+  font-weight: 500;
+  margin-bottom: -1rem;
+  margin-top: 2rem;
+}
+.hero + .content {
+  padding-top: 0rem;
+}
+.hero + .content h2 {
+  margin-top: 1rem;
+}
+.hero + .content > div > *:not(.fullwidth) {
+  max-width: 60rem;
+}
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding-top: 4.2rem;
+  }
+  .hero .gallery {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    position: relative;
+    min-height: 15rem;
+  }
+  .hero .gallery .main {
+    position: unset;
+  }
+  .hero .gallery .main img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  .hero .text {
+    width: 100%;
+    margin-top: -2rem;
+  }
+  .hero .text h1 {
+    margin-bottom: -1rem;
+    font-size: 2.75rem;
+    line-height: 2.5rem;
+  }
+  .hero .text h2 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+  }
+  .hero .button, .hero button {
+    text-align: center;
+  }
+}
+
+.fullwidth > * {
+  max-width: 60rem !important;
+}
+
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=hero.css.map */

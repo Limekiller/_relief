@@ -1,0 +1,397 @@
+/** Variables **/
+:root {
+  --main-bg-color: #fff8ec;
+  --primary-color: #8b4437;
+  --secondary-color: #a33e4f;
+  --accent-color: #5c53a3;
+  --grey: #3c3a3d;
+}
+
+/** CSS Reset **/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+*:not(dialog) {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+/** Styles **/
+html {
+  background: var(--main-bg-color);
+  color: var(--primary-color);
+  font-family: "meno-text", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 19px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "futura-pt-condensed", sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  letter-spacing: -0.1rem;
+  line-height: 3.5rem;
+  margin-bottom: 1.75rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-weight: 400;
+  margin-top: 3rem;
+  line-height: 2.25rem;
+}
+
+h3 {
+  font-size: 1.33rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+h4 {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  color: var(--accent-color);
+}
+
+h5 {
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+p {
+  margin: 1rem 0;
+  line-height: 1.6rem;
+  color: #2d2d2d;
+}
+
+hr {
+  margin: 2rem 0;
+}
+
+ul {
+  margin: 1rem 0;
+}
+
+img {
+  margin: 1rem 0;
+}
+
+a {
+  color: unset;
+}
+
+button, .button {
+  padding: 0.5rem 1.5rem;
+  background: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+  text-decoration: none;
+  color: var(--main-bg-color);
+  border-radius: 0.5rem;
+  font-family: "futura-pt-condensed", sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button:hover, .button:hover {
+  background: var(--main-bg-color);
+  color: var(--secondary-color);
+}
+button.none, .button.none {
+  all: unset;
+}
+button.primary, .button.primary {
+  background: var(--accent-color);
+  border: 2px solid var(--accent-color);
+}
+button.primary:hover, .button.primary:hover {
+  background: var(--main-bg-color);
+  color: var(--accent-color);
+}
+button.outline, .button.outline {
+  background: var(--main-bg-color);
+  color: var(--secondary-color);
+}
+button.outline:hover, .button.outline:hover {
+  background: var(--secondary-color);
+  color: var(--main-bg-color);
+}
+
+img {
+  border-radius: 3px;
+  object-fit: contain;
+}
+
+.content {
+  padding: 9rem 1.5rem 0 1.5rem;
+  min-height: calc(100vh - 16rem);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.content > main > *:not(.fullwidth),
+.content > div > *:not(.fullwidth) {
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.content.no-header {
+  padding-top: 5.5rem;
+}
+
+.wp-block-columns {
+  margin-bottom: 2rem;
+}
+
+.widgettitle {
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+}
+
+.screen-height {
+  min-height: 1080px;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.hero-callout {
+  font-size: 6rem;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+/** Use to make section with inverted colors **/
+.secondary {
+  padding: 1rem;
+  background: var(--secondary-color);
+  color: var(--main-bg-color);
+  clip-path: border-box;
+  position: relative;
+  overflow: hidden;
+}
+.secondary p {
+  color: var(--main-bg-color);
+}
+
+/** Use to make section stretch to edges. Usually used with above class **/
+.fullwidth {
+  width: calc(100% + 3rem);
+  margin-left: -1.5rem;
+}
+.fullwidth > * {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+/** Use to make image clippped to 7-point-star **/
+.star {
+  clip-path: shape(from 77.35% 61.33%, line to 100% 50%, line to 77.35% 38.67%, line to 85.35% 14.65%, line to 61.33% 22.65%, line to 50% 0%, line to 38.67% 22.65%, line to 14.65% 14.65%, line to 22.65% 38.67%, line to 0% 50%, line to 22.65% 61.33%, line to 14.65% 85.35%, line to 38.67% 77.35%, line to 50% 100%, line to 61.33% 77.35%, line to 85.35% 85.35%, line to 77.35% 61.33%, close);
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: 16% 0%;
+}
+.star img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin: 0;
+  width: 55rem;
+}
+
+/** Use to float image to the left. See star element in "Our Relief Sale" section of homepage **/
+.left {
+  position: absolute;
+  left: -26rem;
+  margin-top: 2rem;
+}
+@media screen and (max-width: 1500px) {
+  .left {
+    left: calc(50vw - 66rem);
+  }
+}
+@media screen and (max-width: 768px) {
+  .left {
+    width: 25rem;
+    margin-top: -26rem;
+    left: unset;
+    right: -5rem;
+    transform: rotate(-5deg);
+  }
+}
+.left {
+  /** Float, but not as far **/
+}
+@media screen and (min-width: 768px) {
+  .left.half {
+    left: -16rem;
+    margin-top: -4rem;
+  }
+}
+
+.featured-image {
+  height: 30rem;
+  object-fit: cover;
+  margin-top: -14rem;
+  position: absolute;
+  transform: rotate(-5deg);
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: -25rem;
+}
+
+.img-header {
+  margin-top: 5rem;
+  margin-left: 13rem;
+  margin-bottom: 5rem;
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+}
+
+.is-layout-grid {
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.is-layout-flex {
+  gap: 1rem;
+}
+
+/** Grid has a gap by default. This is used on individual grid rows to remove that **/
+.grid-reduce-gap {
+  margin-top: -1.25rem !important;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.mt-1 {
+  margin-top: 1rem !important;
+}
+
+.mt-2 {
+  margin-top: 2rem !important;
+}
+
+.mt-10 {
+  margin-top: 10rem !important;
+}
+
+@media screen and (max-width: 768px) {
+  .mob-mt-10 {
+    margin-top: 10rem !important;
+  }
+}
+
+.flex {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.objp-l, .objp-l > * {
+  object-position: left;
+}
+
+.objp-r, .objp-r > * {
+  object-position: right;
+}
+
+.objp-t, .objp-t > * {
+  object-position: top;
+}
+
+.objp-b, .objp-b > * {
+  object-position: bottom;
+}
+
+@media screen and (max-width: 1280px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 2rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  button, .button {
+    font-size: 1.25rem;
+  }
+  .hero-callout {
+    text-align: center;
+  }
+  .fullwidth {
+    padding: 1.5rem;
+  }
+  .featured-image {
+    height: 23rem;
+    margin-top: -10rem;
+    left: 30rem;
+  }
+  .has-image .header {
+    margin-top: 0rem;
+    text-shadow: unset;
+    color: var(--primary-color);
+  }
+  .has-image .img-header {
+    margin-top: 15rem;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
