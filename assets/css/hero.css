@@ -1,0 +1,135 @@
+.hero {
+    width: 100vw;
+    min-height: calc(100vh);
+    display: flex;
+    gap: 1rem;
+    padding-top: 5rem;
+    
+    .gallery {
+        width: 50%;
+
+        .main {
+            height: 100%;
+            position: relative;
+
+            img {
+                margin: 0;
+                height: 100%;
+                object-fit: cover;
+                transition: opacity 0.75s ease;
+
+                &.mask {
+                    opacity: 0;
+                    position: absolute;
+                    top: 0;
+                    z-index: 2;
+                }
+            }
+        }
+
+        .selector {
+            /* display: flex; */
+            display: none;
+            width: 100%;
+            overflow: scroll;
+            margin-top: -4rem;
+            position: relative;
+
+            button {
+                border: none;
+                padding: 0;
+
+                &:hover, &:focus {
+                    img {
+                        cursor: pointer;
+                        z-index: 1;
+                        border: 2px solid var(--secondary-color);
+                    }
+                }
+
+                img {
+                    max-width: 6rem;
+                    transition: all 0.2s ease;
+                    border: 2px solid transparent;
+                } 
+            }
+        }
+    }
+
+    .text {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50%;
+        gap: 3rem;
+
+        h1 {
+            margin-top: 1rem;
+        }
+        h2 {
+            font-weight: 500;
+            margin-bottom: -1rem;
+            margin-top: 2rem;
+        }
+    }
+
+    + .content  {
+        padding-top: 0rem;
+
+        h2 {
+            margin-top: 1rem;
+        }
+
+        & > div > *:not(.fullwidth) {
+            max-width: 60rem;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        padding-top: 4.2rem;
+
+        .gallery {
+            width: 100%;
+            height: 100%;
+            flex-grow: 1;
+            position: relative;
+            min-height: 15rem;
+
+            .main  {
+                position: unset;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                }
+            }
+        }
+
+        .text {
+            width: 100%;
+            margin-top: -2rem;
+
+            h1 {
+                margin-bottom: -1rem;
+                font-size: 2.75rem;
+                line-height: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                line-height: 1.75rem;
+            }
+        }
+
+        .button, button {
+            text-align: center;
+        }
+    }
+}
+
+.fullwidth > * {
+    max-width: 60rem !important;
+}
