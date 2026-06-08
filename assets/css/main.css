@@ -374,7 +374,7 @@ img {
     }   
 
     .featured-image {
-        height: unset;
+        height: 23rem;
         margin-top: -10rem;
         left: 30rem;
     }
