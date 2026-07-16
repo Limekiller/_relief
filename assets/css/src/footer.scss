@@ -1,8 +1,8 @@
 footer {
-    background: var(--grey);
+    background: var(--secondary-color);
     padding: 2rem;
     color: white;
-    border-top: 2px solid var(--primary-color);
+    border-top: 2px solid var(--dark-color);
     position: relative;
     overflow: hidden;
 
@@ -48,7 +48,7 @@ footer {
         width: 100%;
         bottom: 0;
         padding: 0.5rem 2rem;
-        background: #2d2d2d;
+        background: var(--dark-color);
         display: flex;
         font-size: 0.75rem;
     }

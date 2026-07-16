@@ -2,9 +2,9 @@
 :root {
     --main-bg-color: #fff8ec;
     --primary-color: #8b4437;
-    --secondary-color: #a33e4f;
-    --accent-color: #5c53a3;
-    --grey: #3c3a3d;
+    --secondary-color: #3D518C;
+    --accent-color: #f79696;
+    --dark-color: #091540;
 }
 
 /** CSS Reset **/
@@ -66,6 +66,7 @@ h1 {
     margin-bottom: 1.75rem;
 }
 h2 {
+    color: var(--secondary-color);
     font-size: 2.25rem;
     font-weight: 400;
     margin-top: 3rem;
@@ -80,7 +81,7 @@ h4 {
     margin-top: 1rem;
     font-size: 1.25rem;
     text-transform: uppercase;
-    color: var(--accent-color);
+    color: var(--dark-color);
 }
 h5 {
     font-size: 1rem;
@@ -95,6 +96,7 @@ p {
 }
 hr {
     margin: 2rem 0;
+    border-top: 3px dashed var(--dark-color) !important;
 }
 ul {
     margin: 1rem 0;
@@ -200,13 +202,13 @@ img {
 /** Use to make section with inverted colors **/
 .secondary {
     padding: 1rem;
-    background: var(--secondary-color);
+    background: var(--dark-color);
     color: var(--main-bg-color);
     clip-path: border-box;
     position: relative;
     overflow: hidden;
 
-    p {
+    p, h2 {
         color: var(--main-bg-color);
     }
 }
@@ -224,9 +226,7 @@ img {
 
 /** Use to make image clippped to 7-point-star **/
 .star {
-	clip-path: shape(from 77.35% 61.33%,line to 100% 50%,line to 77.35% 38.67%,line to 85.35% 14.65%,line to 61.33% 22.65%,line to 50% 0%,line to 38.67% 22.65%,line to 14.65% 14.65%,line to 22.65% 38.67%,line to 0% 50%,line to 22.65% 61.33%,line to 14.65% 85.35%,line to 38.67% 77.35%,line to 50% 100%,line to 61.33% 77.35%,line to 85.35% 85.35%,line to 77.35% 61.33%,close);
-    aspect-ratio: 1/1;
-    object-fit: cover;
+    clip-path: polygon(22.4% 44.1%, 3.8% 60.8%, 27.6% 68.3%, 29% 93.5%, 49.7% 79.4%, 70% 94%, 72% 68.9%, 96% 61.9%, 77.7% 44.8%, 87.3% 21.5%, 62.6% 25.2%, 50.6% 3.2%, 38% 24.9%, 13.4% 20.7%);    object-fit: cover;
     object-position: 16% 0%;
 
     & img {
@@ -234,6 +234,19 @@ img {
         object-fit: cover;
         margin: 0;
         width: 55rem;
+    }
+
+    &.offset {
+        position: absolute;
+        margin-left: -12rem;
+        z-index: -1;
+        width: 350px;
+        mask-image: linear-gradient(170deg,rgba(0, 0, 0, 1) 25%, rgba(255, 255, 255, 0) 100%);
+
+        &.right {
+            margin-left: 32rem;
+            margin-right: -10rem;
+        }
     }
 }
 
@@ -264,22 +277,44 @@ img {
     }
 }
 
-.featured-image {
-    height: 30rem;
-    object-fit: cover;
-    margin-top: -14rem;
-    position: absolute;
-    transform: rotate(-5deg);
-    left: 50%;
-    transform: translateX(-50%);
-    margin-left: -25rem;
+.zigzag {
+  --a: 120deg; /* the angle of the spikes */
+  --s: 5px;  /* the size of the spikes */
+  
+  mask:  
+    repeating-conic-gradient(from calc(180deg - var(--a)/2) at 50% var(--s),#0000 0,#000 1deg calc(var(--a) - 1deg) ,#0000 var(--a) 180deg) 
+    50% calc(-1*var(--s))/calc(2*var(--s)*tan(var(--a)/2)) 100%;
 }
 
-.img-header {
-    margin-top: 5rem;
-    margin-left: 13rem;
-    margin-bottom: 5rem;
+.featured-container {
+    min-height: calc(100vh - 8rem);
+    display: flex;
+    gap: 2rem;
+    margin-top: -2rem;
+
+    .featured-image {
+        object-fit: cover;
+        margin: 0 !important;
+        width: 50%;
+        max-width: unset !important;
+    }
+
+    .header {
+        height: min-content;
+        margin: 0 !important;
+    }
+
+    .featured-content-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
 }
+
 
 .header {
     position: relative;
@@ -320,10 +355,21 @@ img {
         margin-top: 10rem !important;
     }
 }
+.flex-fit {
+    flex: 1 1 auto;
+    max-width: 15rem;
+    @media screen and (max-width: 768px) {
+        max-width: unset;
+    }
+}
 
 .flex {
     display: flex;
     gap: 0.5rem;
+
+    &.wrap {
+        flex-wrap: wrap;
+    }
 }
 
 .objp-l, .objp-l > * {
@@ -373,23 +419,23 @@ img {
         padding: 1.5rem;
     }   
 
-    .featured-image {
-        height: 23rem;
-        margin-top: -10rem;
-        left: 30rem;
-    }
-
-    .has-image {
-        .header {
-            margin-top: 0rem;
-            text-shadow: unset;
-            color: var(--primary-color);
-        }
-
-        .img-header {
-            margin-top: 15rem;
-            margin-left: 0;
-            margin-bottom: 0;
+    .featured-container {
+        margin-top: -3rem;
+        flex-direction: column;
+        
+        .featured-image {
+            width: 100%;
+            height: 100%;
+            flex-grow: 1;
+            position: relative;
+            min-height: 15rem;
         }
     }
+
+    .offset.right {
+        margin-right: -10rem;
+        margin-top: -3rem;
+        right: 0;
+    }
+
 }
