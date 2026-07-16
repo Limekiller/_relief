@@ -156,6 +156,16 @@ button.outline:hover, .button.outline:hover {
   background: var(--secondary-color);
   color: var(--main-bg-color);
 }
+button.light, .button.light {
+  background-color: var(--main-bg-color);
+  color: var(--dark-color);
+  border-color: var(--dark-color);
+}
+button.light:hover, .button.light:hover {
+  background: var(--dark-color);
+  color: var(--main-bg-color);
+  border-color: var(--main-bg-color);
+}
 
 img {
   border-radius: 3px;
@@ -307,6 +317,16 @@ img {
 }
 .featured-container h2 {
   margin-top: 0;
+}
+
+.notif {
+  background: var(--primary-color);
+  color: var(--main-bg-color);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
 }
 
 .header {

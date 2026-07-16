@@ -151,6 +151,18 @@ button, .button {
             color: var(--main-bg-color);
         }
     }
+
+    &.light {
+        background-color: var(--main-bg-color);
+        color: var(--dark-color);
+        border-color: var(--dark-color);
+
+        &:hover {
+            background: var(--dark-color);
+            color: var(--main-bg-color);
+            border-color: var(--main-bg-color);
+        }
+    }
 }
 
 img {
@@ -313,6 +325,16 @@ img {
     h2 {
         margin-top: 0;
     }
+}
+
+.notif {
+    background: var(--primary-color);
+    color: var(--main-bg-color);
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
 }
 
 
