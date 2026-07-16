@@ -285,7 +285,7 @@ img {
 }
 
 .featured-container {
-  min-height: calc(100vh - 8rem);
+  min-height: calc(80vh - 8rem);
   display: flex;
   gap: 2rem;
   margin-top: -2rem;
