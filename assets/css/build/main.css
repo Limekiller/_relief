@@ -295,7 +295,7 @@ img {
 }
 
 .featured-container {
-  min-height: calc(80vh - 8rem);
+  height: calc(80vh - 8rem);
   display: flex;
   gap: 2rem;
   margin-top: -2rem;
@@ -322,11 +322,13 @@ img {
 .notif {
   background: var(--primary-color);
   color: var(--main-bg-color);
-  padding: 0.5rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 0.25rem;
-  width: 100%;
-  display: inline-block;
+  width: fit-content;
   text-align: center;
+  margin: 0 auto;
+  display: flex;
+  text-decoration: none;
 }
 
 .header {
@@ -437,6 +439,7 @@ img {
     padding: 1.5rem;
   }
   .featured-container {
+    height: unset;
     margin-top: -3rem;
     flex-direction: column;
   }
@@ -450,6 +453,11 @@ img {
   .offset.right {
     margin-right: -10rem;
     margin-top: -3rem;
+    right: 0;
+  }
+  .offset.m-right {
+    margin-right: -6rem;
+    margin-bottom: -2rem;
     right: 0;
   }
 }
