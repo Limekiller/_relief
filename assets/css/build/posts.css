@@ -1,0 +1,53 @@
+.header {
+  margin-top: 2rem;
+}
+
+.posts {
+  margin-bottom: 2rem;
+  position: relative;
+}
+.posts .post {
+  display: block;
+  break-inside: avoid;
+  text-decoration: none;
+  border: 1px solid var(--primary-color);
+  border-radius: 0.33rem;
+  width: 20rem;
+  transition: border-bottom 0.2s ease;
+}
+.posts .post:hover {
+  border-bottom-width: 5px;
+}
+.posts .post:nth-child(2) {
+  margin-top: 3rem;
+}
+.posts .post h2 {
+  margin: 0;
+}
+.posts .post h3 {
+  margin: 0;
+}
+.posts .post img {
+  height: 10rem;
+  width: 100%;
+  object-fit: cover;
+  margin: 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--primary-color);
+  border-radius: 0.33rem 0.33rem 0 0;
+}
+.posts .post .text {
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .post {
+    margin-top: 1rem !important;
+    position: relative !important;
+    width: 100% !important;
+    left: 0 !important;
+    top: 0 !important;
+  }
+}
+
+/*# sourceMappingURL=posts.css.map */

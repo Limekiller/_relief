@@ -33,7 +33,7 @@ nav .links {
   font-weight: bold;
 }
 nav .links ul:not(.sub-menu) > .menu-item:last-child a {
-  background-color: var(--accent-color);
+  background-color: var(--primary-color);
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 3px;

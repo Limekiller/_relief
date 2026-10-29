@@ -48,3 +48,12 @@ add_action( 'widgets_init', 'register_footer_widgets' );
 
 // Enable page images
 add_theme_support( 'post-thumbnails' );
+
+function get_random_quilt() {
+    $images = glob(get_template_directory() . '/assets/img/quilts/*.{jpg,jpeg,png,gif,webp}', GLOB_BRACE);
+    if ($images) {
+        $random = $images[array_rand($images)];
+        $filename = end(explode('/', $random));
+        return get_template_directory_uri() . '/assets/img/quilts/' . $filename;
+    }
+}
