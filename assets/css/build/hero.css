@@ -1,6 +1,6 @@
 .hero {
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   gap: 1rem;
   padding-top: 5rem;
@@ -84,6 +84,8 @@
   .hero {
     flex-direction: column;
     padding-top: 4.2rem;
+    min-height: 100vh;
+    height: unset !important;
   }
   .hero .gallery {
     width: 100%;
