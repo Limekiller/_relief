@@ -416,6 +416,10 @@ img {
   object-position: bottom;
 }
 
+.navigation {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
 .navigation > div {
   display: flex;
   justify-content: space-between;
