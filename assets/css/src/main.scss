@@ -416,6 +416,24 @@ img {
     object-position: bottom;
 }
 
+.navigation {
+
+    > div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    a {
+        text-decoration: none;
+        padding-bottom: 0.25rem;
+        border-bottom: 3px solid var(--secondary-color);
+
+        &:hover {
+            color: var(--secondary-color);
+        }
+    }
+}
+
 @media screen and (max-width: 1280px) {
     html {
         font-size: 16px;

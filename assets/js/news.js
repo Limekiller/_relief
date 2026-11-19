@@ -11,7 +11,7 @@ const reorderPosts = () => {
         if (i - 2 in posts) {
             const abovePost = posts[i - 2];
             const bottom = abovePost.getBoundingClientRect().bottom;
-            post.style.top = `calc(${bottom}px - 13rem)`;
+            post.style.top = `calc(${bottom}px - 12rem)`;
         }
     }
 

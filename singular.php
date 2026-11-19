@@ -23,7 +23,7 @@ if ( has_post_thumbnail() ) {
     <?php else : ?>
         <div class="header">
             <h1><?php echo get_the_title(); ?></h1>
-            <h2><?php echo get_the_date(); ?></h2>
+            <h2 style="margin-top: -0.5rem;"><?php echo get_the_date(); ?></h2>
         </div>
     <?php endif; ?>
     <br />
@@ -32,5 +32,11 @@ if ( has_post_thumbnail() ) {
         get_template_part( 'content', get_post_format() );
         endwhile; endif;
     ?>
+    <div class="navigation">
+        <div>
+            <p><?php next_post_link('%link', '&larr; Next post'); ?></p>
+            <p><?php previous_post_link('%link', 'Last post &rarr;'); ?></p>
+        </div>
+    </div>
 </div> <!-- /.row -->
 <?php get_footer(); ?>
