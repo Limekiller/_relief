@@ -308,7 +308,7 @@ img {
         height: calc(40vh - 8rem);
         h1 {
             margin-bottom: 0.75rem;
-        }   
+        }
     }
 
     .featured-image {
@@ -471,7 +471,7 @@ img {
     }   
 
     .featured-container {
-        height: unset;
+        height: unset !important;
         margin-top: -3rem;
         flex-direction: column;
         

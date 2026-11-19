@@ -462,7 +462,7 @@ img {
     padding: 1.5rem;
   }
   .featured-container {
-    height: unset;
+    height: unset !important;
     margin-top: -3rem;
     flex-direction: column;
   }
