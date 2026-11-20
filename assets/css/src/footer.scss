@@ -1,3 +1,32 @@
+.newsletter-signup {
+    background: var(--main-bg-color);
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    border-top: 2px solid var(--secondary-color);
+    transition: bottom 0.2s ease;
+
+    .close {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        font-size: 1rem;
+        padding: 0.25rem 1rem;
+    }
+
+    > div {
+        max-width: 30rem;
+        margin: 0 auto;
+
+        .ctct-form {
+            display: flex;
+            align-items: flex-end;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
 footer {
     background: var(--secondary-color);
     padding: 2rem;

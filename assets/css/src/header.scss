@@ -1,3 +1,14 @@
+.announcement {
+    padding: 0.25rem;
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 0.75rem;
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+}
+
 #skip-to-main {
     position: absolute;
     background: white;

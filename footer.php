@@ -1,6 +1,5 @@
 <?php wp_enqueue_style ('footer', get_template_directory_uri() . '/assets/css/build/footer.css'); ?>
 </div> <!-- /.container -->
-
     <footer>
         <div class="widgets">
             <?php if ( is_active_sidebar( 'footer-section-one' ) ) : ?>
@@ -28,7 +27,18 @@
 
   <?php 
   wp_enqueue_script('header', get_template_directory_uri() . '/assets/js/header.js');
+  wp_enqueue_script('newsletter', get_template_directory_uri() . '/assets/js/newsletter.js');
   wp_footer(); 
 ?>
-  </body>
+        <div class="newsletter-signup">
+            <button class="close outline">Close</button>
+            <div>
+                <h3>Sign up for our newsletter!</h3>
+                <?php 
+                    $cc_form_id = get_field('newsletter_form_id');
+                    echo do_shortcode("[ctct form='$cc_form_id']"); 
+                ?>
+            </div>
+        </div>
+    </body>
 </html>

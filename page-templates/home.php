@@ -5,7 +5,7 @@
 wp_enqueue_style('hero', get_template_directory_uri() . '/assets/css/build/hero.css');
 ?>
 
-<?php 
+<?php
 get_header(); 
 $images = get_field('hero_images');
 ?>
