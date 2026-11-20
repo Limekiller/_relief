@@ -36,18 +36,16 @@
 
 <body>
     <a id='skip-to-main' href="#main-content">Skip to main content</a>     
-    <?php
-    $announcement = get_field('announcement');
-    $header_top = 0;
-    if ($announcement) {
-        $header_top = 1; ?>
-        <div class="announcement"><?php echo $announcement; ?></div>
-    <?php } ?>
     <nav style="margin-top: <?php echo $header_top; ?>rem;">
-        <a href="<?php echo get_home_url(); ?>"><img id="logo" alt="Site header logo" src="<?php header_image(); ?>" /></a>
-        <img id="menu-icon" width="35" src="<?php echo get_template_directory_uri() . '/assets/img/menu.svg' ?>" />
-        <div class="links">
-            <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+        <?php if (get_field('announcement')) { ?>
+            <div class="announcement"><?php echo get_field('announcement'); ?></div>
+        <?php } ?>
+        <div class="main-nav">
+            <a href="<?php echo get_home_url(); ?>"><img id="logo" alt="Site header logo" src="<?php header_image(); ?>" /></a>
+            <img id="menu-icon" width="35" src="<?php echo get_template_directory_uri() . '/assets/img/menu.svg' ?>" />
+            <div class="links">
+                <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+            </div>
         </div>
     </nav>
 
