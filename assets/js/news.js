@@ -20,8 +20,8 @@ const reorderPosts = () => {
     document.querySelector('.posts').style.height = `${bottom}px`;
 }
 
-window.onload = () => {
+window.addEventListener('load', () => {
     reorderPosts();
     window.addEventListener("resize", reorderPosts);
-}
+});
 
