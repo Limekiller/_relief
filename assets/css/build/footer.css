@@ -23,6 +23,9 @@
   gap: 1rem;
   margin-bottom: 1rem;
 }
+.newsletter-signup > div .ctct-disclosure {
+  display: none;
+}
 
 footer {
   background: var(--secondary-color);
