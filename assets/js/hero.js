@@ -38,7 +38,7 @@ const setImage = (
     }
 }
 
-window.onload = () => {
+const hero = () => {
     const images = document.querySelectorAll(".hero .selector img");
     const baseImage = document.querySelector(".hero img.base");
     const maskImage = document.querySelector(".hero img.mask");
@@ -72,3 +72,5 @@ window.onload = () => {
         setImage(baseImage, maskImage, progressBar, images[currIndex]);
     });
 }
+
+window.addEventListener('load', hero);

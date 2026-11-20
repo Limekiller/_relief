@@ -1,4 +1,4 @@
-const main = () => {
+const newsletter = () => {
     const newsletter = document.querySelector('.newsletter-signup');
     const elemHeight = newsletter.clientHeight;
     const close = newsletter.querySelector('.close');
@@ -16,6 +16,4 @@ const main = () => {
     });
 }
 
-window.onload = () => {
-    main();   
-}
+window.addEventListener('load', newsletter);
